@@ -102,6 +102,21 @@ input[type="text"] {
     box-shadow: 0 1px 4px rgba(12, 16, 20, 0.03);
 }
 
+
+.result-item {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+}
+
+.result-item .serial {
+    color: var(--accent);
+    font-weight: 700;
+    margin-right: 0.6rem;
+    min-width: 2rem;
+    text-align: right;
+}
+
 .suject-list li input.subject {
     transform: scale(1.02);
     margin-right: 0.75rem;

@@ -36,8 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         const total = subjectObjs.reduce((s, item) => s + (item.fee || 0), 0);
-        const itemsHtml = subjectObjs.map(item => `
-            <li class="result-item">${escapeHtml(item.name)} (₹${item.fee})</li>
+        const itemsHtml = subjectObjs.map((item, idx) => `
+            <li class="result-item"><span class="serial">${idx + 1}.</span>${escapeHtml(item.name)} (₹${item.fee})</li>
         `).join('');
 
         resultContainer.innerHTML = `
