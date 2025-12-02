@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 text = (input.nextSibling && input.nextSibling.textContent) ? input.nextSibling.textContent.trim() : '';
             }
-            // remove any trailing fee in brackets like "(₹1000)" to avoid duplication
             text = text.replace(/\s*\(₹[\d,]+\)\s*$/, '');
             text = text.replace(/\s+/g, ' ').replace(/^\s+|\s+$/g, '');
             return { name: text, fee: Number(input.value || 0) };
@@ -46,12 +45,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p><strong>STUDENT NAME:</strong> ${escapeHtml(studentName || '')}</p>
                 <p><strong>SELECTED SUBJECTS:</strong></p>
                 <ol class="result-list">${itemsHtml}</ol>
-                <p><strong>TOTAL FEES:</strong> ₹${total}</p>
+                <p><strong>TOTAL FEES:</strong> <span class="total-amt">₹${total}</span></p>
             </div>
         `;
 
         resultContainer.classList.remove('result-enter');
-        // force reflow to restart animation
         void resultContainer.offsetWidth;
         resultContainer.classList.add('result-enter');
     });
