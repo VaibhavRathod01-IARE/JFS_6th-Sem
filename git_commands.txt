@@ -11,6 +11,8 @@ if you want to add any files in local repository or you can change the existing 
 2. git add .
 3. git commit -m "message"
 4. git push origin main
+To go to the previous file in repo
+use -- (cd ..)
 -----------------------------------------------------------------------------------------------------
 dos commands
 
